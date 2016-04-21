@@ -29,7 +29,7 @@
 -(void)awakeFromNib {
     _borderWidth    = 5.0f;
     _radious        = 30.0f;
-    _duration       = 0.4;
+    _duration       = 0.6;
     _borderColor    = [UIColor whiteColor];
     _fillColor      = [UIColor clearColor];
     _scale          = 3.0f;
@@ -45,7 +45,7 @@
 }
 -(void)prePerform:(CGPoint)point locationInView:(BOOL)isLocationInView withColor:(UIColor *)color {
     
-    CGPoint p = isLocationInView ? CGPointMake(point.x + self.frame.origin.x, point.y + self.frame.origin.y) : point;
+    CGPoint p = isLocationInView ? point : CGPointMake(point.x + self.frame.origin.x, point.y + self.frame.origin.y);
     [self perform:p];
 }
 
