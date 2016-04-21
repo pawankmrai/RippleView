@@ -13,6 +13,8 @@
 		2BEA05FC1CC8AE3500C0A008 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BEA05FA1CC8AE3500C0A008 /* Main.storyboard */; };
 		2BEA05FE1CC8AE3500C0A008 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BEA05FD1CC8AE3500C0A008 /* Assets.xcassets */; };
 		2BEA06011CC8AE3500C0A008 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BEA05FF1CC8AE3500C0A008 /* LaunchScreen.storyboard */; };
+		2BEA060E1CC8B33800C0A008 /* RippleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEA060D1CC8B33800C0A008 /* RippleView.m */; };
+		2BEA06141CC8D71A00C0A008 /* DemoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEA06131CC8D71A00C0A008 /* DemoView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		2BEA05FD1CC8AE3500C0A008 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2BEA06001CC8AE3500C0A008 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2BEA06021CC8AE3500C0A008 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2BEA060C1CC8B33800C0A008 /* RippleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RippleView.h; sourceTree = "<group>"; };
+		2BEA060D1CC8B33800C0A008 /* RippleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RippleView.m; sourceTree = "<group>"; };
+		2BEA06121CC8D71A00C0A008 /* DemoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoView.h; sourceTree = "<group>"; };
+		2BEA06131CC8D71A00C0A008 /* DemoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +72,10 @@
 				2BEA05FD1CC8AE3500C0A008 /* Assets.xcassets */,
 				2BEA05FF1CC8AE3500C0A008 /* LaunchScreen.storyboard */,
 				2BEA06021CC8AE3500C0A008 /* Info.plist */,
+				2BEA06081CC8AE5F00C0A008 /* RippleView */,
 				2BEA05F11CC8AE3500C0A008 /* Supporting Files */,
+				2BEA06121CC8D71A00C0A008 /* DemoView.h */,
+				2BEA06131CC8D71A00C0A008 /* DemoView.m */,
 			);
 			path = RippleView;
 			sourceTree = "<group>";
@@ -77,6 +86,15 @@
 				2BEA05F21CC8AE3500C0A008 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2BEA06081CC8AE5F00C0A008 /* RippleView */ = {
+			isa = PBXGroup;
+			children = (
+				2BEA060C1CC8B33800C0A008 /* RippleView.h */,
+				2BEA060D1CC8B33800C0A008 /* RippleView.m */,
+			);
+			path = RippleView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,7 +168,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BEA05F91CC8AE3500C0A008 /* ViewController.m in Sources */,
+				2BEA06141CC8D71A00C0A008 /* DemoView.m in Sources */,
 				2BEA05F61CC8AE3500C0A008 /* AppDelegate.m in Sources */,
+				2BEA060E1CC8B33800C0A008 /* RippleView.m in Sources */,
 				2BEA05F31CC8AE3500C0A008 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

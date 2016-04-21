@@ -7,9 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "DemoView.h"
 
 @interface ViewController ()
 
+@property (weak, nonatomic) IBOutlet DemoView *demoView;
 @end
 
 @implementation ViewController
@@ -17,6 +19,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    self.demoView.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.demoView.layer.borderWidth = 1.0f;
 }
 
 - (void)didReceiveMemoryWarning {
