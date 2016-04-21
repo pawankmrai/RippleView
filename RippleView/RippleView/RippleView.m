@@ -30,8 +30,8 @@
     _borderWidth    = 5.0f;
     _radious        = 30.0f;
     _duration       = 0.4;
-    _borderColor    = [UIColor redColor];
-    _fillColor      = [UIColor blueColor];
+    _borderColor    = [UIColor whiteColor];
+    _fillColor      = [UIColor clearColor];
     _scale          = 3.0f;
     _isRunSuperView = YES;
 }
@@ -51,16 +51,17 @@
 
 -(void)perform:(CGPoint)point {
     
+    UIGraphicsBeginImageContextWithOptions(CGSizeMake((_radious + _borderWidth) * 2, (_radious + _borderWidth) *2), false, 3.0);
     //
-    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(self.borderWidth, self.borderWidth, self.radious * 2, self.radious * 2) cornerRadius:self.radious];
-    [self.fillColor setFill];
+    CGRect rect = CGRectMake(_borderWidth, _borderWidth, _radious * 2, _radious * 2);
+    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:_radious];
+    [_fillColor setFill];
     [path fill];
-    [self.borderColor setStroke];
-    path.lineWidth = self.borderWidth;
+    [_borderColor setStroke];
+    path.lineWidth = _borderWidth;
     [path stroke];
     
     //
-    UIGraphicsBeginImageContextWithOptions(CGSizeMake((self.radious + self.borderWidth) * 2, (self.radious + self.borderWidth) *2), false, 3.0);
     UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
@@ -70,7 +71,7 @@
     opcity.autoreverses = NO;
     opcity.fillMode = kCAFillModeForwards;
     opcity.removedOnCompletion = NO;
-    opcity.duration = self.duration;
+    opcity.duration = _duration;
     opcity.fromValue = @1.0;
     opcity.toValue = @0.0;
     
@@ -79,9 +80,9 @@
     transform.autoreverses = NO;
     transform.fillMode = kCAFillModeForwards;
     transform.removedOnCompletion = NO;
-    transform.duration = self.duration;
-    transform.fromValue = [NSValue valueWithCATransform3D:CATransform3DMakeScale(1.0/self.scale, 1.0 / self.scale, 1.0)];
-    transform.toValue = [NSValue valueWithCATransform3D:CATransform3DMakeScale(self.scale, self.scale, 1.0)];
+    transform.duration = _duration;
+    transform.fromValue = [NSValue valueWithCATransform3D:CATransform3DMakeScale(1.0/_scale, 1.0 / _scale, 1.0)];
+    transform.toValue = [NSValue valueWithCATransform3D:CATransform3DMakeScale(_scale, _scale, 1.0)];
     
     //
     CALayer *rippleLayer = self.targetLayer;
@@ -92,19 +93,18 @@
     }
     
     CALayer *target = self.targetLayer;
-    RippleView *weakSelf = self;
     
     //
     dispatch_async(dispatch_get_main_queue(), ^{
         //
         CALayer *layer = [CALayer layer];
         layer.contents = (__bridge id _Nullable)(img.CGImage);
-        layer.frame = CGRectMake(point.x - weakSelf.radious, point.y, weakSelf.radious * 2, weakSelf.radious * 1);
+        layer.frame = CGRectMake(point.x - _radious, point.y, _radious * 2, _radious * 1);
         [target addSublayer:layer];
         
         //
         [CATransaction begin];
-        [CATransaction setAnimationDuration:weakSelf.duration];
+        [CATransaction setAnimationDuration:_duration];
         [CATransaction setCompletionBlock:^{
             layer.contents = nil;
             [layer removeAllAnimations];
@@ -116,7 +116,6 @@
         [layer addAnimation:transform forKey:nil];
         [CATransaction commit];
     });
-    
 }
 
 -(void)rippleStop {
