@@ -10,4 +10,5 @@
 
 @interface RippleView : UIView
 -(void)rippleView:(CGPoint)location withColor:(UIColor *)color;
+-(void)rippleStop;
 @end

@@ -19,10 +19,7 @@
 @property(assign, nonatomic) CGFloat radious;
 @property(assign, nonatomic) CFTimeInterval duration;
 @property(assign, nonatomic) CGFloat scale;
-@property(assign, nonatomic) BOOL isRunSuperView;
 
-//Private function
--(void)rippleStop;
 @end
 @implementation RippleView
 
@@ -31,9 +28,8 @@
     _radious        = 30.0f;
     _duration       = 0.6;
     _borderColor    = [UIColor whiteColor];
-    _fillColor      = [UIColor clearColor];
+    _fillColor      = [UIColor whiteColor];
     _scale          = 3.0f;
-    _isRunSuperView = YES;
 }
 
 -(void)rippleView:(CGPoint)location withColor:(UIColor *)color {
@@ -41,11 +37,11 @@
 }
 -(void)border:(CGPoint)location withColor:(UIColor *)color {
     self.borderColor = color;
-    [self prePerform:location locationInView:YES withColor:color];
+    [self prePerform:location withColor:color];
 }
--(void)prePerform:(CGPoint)point locationInView:(BOOL)isLocationInView withColor:(UIColor *)color {
+-(void)prePerform:(CGPoint)point withColor:(UIColor *)color {
     
-    CGPoint p = isLocationInView ? point : CGPointMake(point.x + self.frame.origin.x, point.y + self.frame.origin.y);
+    CGPoint p =  point;
     [self perform:p];
 }
 
@@ -77,6 +73,7 @@
     
     //
     CABasicAnimation *transform = [CABasicAnimation animation];
+    transform.keyPath = @"transform";
     transform.autoreverses = NO;
     transform.fillMode = kCAFillModeForwards;
     transform.removedOnCompletion = NO;
@@ -99,7 +96,7 @@
         //
         CALayer *layer = [CALayer layer];
         layer.contents = (__bridge id _Nullable)(img.CGImage);
-        layer.frame = CGRectMake(point.x - _radious, point.y, _radious * 2, _radious * 1);
+        layer.frame = CGRectMake(point.x - _radious, point.y, _radious * 2, _radious * 2);
         [target addSublayer:layer];
         
         //
