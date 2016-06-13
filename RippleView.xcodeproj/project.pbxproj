@@ -15,6 +15,8 @@
 		2BEA06011CC8AE3500C0A008 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BEA05FF1CC8AE3500C0A008 /* LaunchScreen.storyboard */; };
 		2BEA060E1CC8B33800C0A008 /* RippleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEA060D1CC8B33800C0A008 /* RippleView.m */; };
 		2BEA06141CC8D71A00C0A008 /* DemoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEA06131CC8D71A00C0A008 /* DemoView.m */; };
+		2BEA061A1CCDF3B500C0A008 /* config.properties in Resources */ = {isa = PBXBuildFile; fileRef = 2BEA06191CCDF3B500C0A008 /* config.properties */; };
+		2BEA06391CCE1F6D00C0A008 /* PropertyParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEA06381CCE1F6D00C0A008 /* PropertyParser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,9 @@
 		2BEA060D1CC8B33800C0A008 /* RippleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RippleView.m; sourceTree = "<group>"; };
 		2BEA06121CC8D71A00C0A008 /* DemoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoView.h; sourceTree = "<group>"; };
 		2BEA06131CC8D71A00C0A008 /* DemoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoView.m; sourceTree = "<group>"; };
+		2BEA06191CCDF3B500C0A008 /* config.properties */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = config.properties; sourceTree = "<group>"; };
+		2BEA06371CCE1F6D00C0A008 /* PropertyParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyParser.h; sourceTree = "<group>"; };
+		2BEA06381CCE1F6D00C0A008 /* PropertyParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyParser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +77,8 @@
 				2BEA05FD1CC8AE3500C0A008 /* Assets.xcassets */,
 				2BEA05FF1CC8AE3500C0A008 /* LaunchScreen.storyboard */,
 				2BEA06021CC8AE3500C0A008 /* Info.plist */,
+				2BEA06191CCDF3B500C0A008 /* config.properties */,
+				2BEA06361CCE1F4E00C0A008 /* PropertyParser */,
 				2BEA06081CC8AE5F00C0A008 /* RippleView */,
 				2BEA05F11CC8AE3500C0A008 /* Supporting Files */,
 				2BEA06121CC8D71A00C0A008 /* DemoView.h */,
@@ -95,6 +102,15 @@
 				2BEA060D1CC8B33800C0A008 /* RippleView.m */,
 			);
 			path = RippleView;
+			sourceTree = "<group>";
+		};
+		2BEA06361CCE1F4E00C0A008 /* PropertyParser */ = {
+			isa = PBXGroup;
+			children = (
+				2BEA06371CCE1F6D00C0A008 /* PropertyParser.h */,
+				2BEA06381CCE1F6D00C0A008 /* PropertyParser.m */,
+			);
+			path = PropertyParser;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,6 +172,7 @@
 			files = (
 				2BEA06011CC8AE3500C0A008 /* LaunchScreen.storyboard in Resources */,
 				2BEA05FE1CC8AE3500C0A008 /* Assets.xcassets in Resources */,
+				2BEA061A1CCDF3B500C0A008 /* config.properties in Resources */,
 				2BEA05FC1CC8AE3500C0A008 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -170,6 +187,7 @@
 				2BEA05F91CC8AE3500C0A008 /* ViewController.m in Sources */,
 				2BEA06141CC8D71A00C0A008 /* DemoView.m in Sources */,
 				2BEA05F61CC8AE3500C0A008 /* AppDelegate.m in Sources */,
+				2BEA06391CCE1F6D00C0A008 /* PropertyParser.m in Sources */,
 				2BEA060E1CC8B33800C0A008 /* RippleView.m in Sources */,
 				2BEA05F31CC8AE3500C0A008 /* main.m in Sources */,
 			);
@@ -318,6 +336,7 @@
 				2BEA06071CC8AE3500C0A008 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

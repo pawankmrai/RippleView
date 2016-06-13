@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "PropertyParser.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    //
+    NSLog(@"%@",[[PropertyParser sharedInstance] description]);
     return YES;
 }
 
